@@ -1,0 +1,25 @@
+{
+  "name": "eventbyte-api",
+  "version": "0.1.0",
+  "description": "EventByte API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eventbyte/eventbyte-api.git"
+  },
+  "keywords": ["eventbyte", "event", "api"],
+  "author": "M Haidar Hanif <haidar@impactbyte.com> (https://impactbyte.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eventbyte/eventbyte-api/issues"
+  },
+  "homepage": "https://github.com/eventbyte/eventbyte-api#readme",
+  "devDependencies": {
+    "nodemon": "1.12.1"
+  }
+}
