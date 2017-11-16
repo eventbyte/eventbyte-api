@@ -8,24 +8,27 @@
 
 # EventByte API
 
-## Development
+Setup your repo first:
 
 ```sh
 ./setup.sh
-npm install
-npm run dev
+```
+
+## Development
+
+```sh
+yarn
+yarn dev
 ```
 
 ## Testing
 
 ```sh
-./setup.sh
-npm test
+yarn test
 ```
 
 ## Deployment
 
 ```sh
-./setup.sh
-npm run deploy
+yarn deploy
 ```

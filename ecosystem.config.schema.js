@@ -13,8 +13,8 @@ module.exports = {
       name: meta.name,
       script: meta.main,
       node_args: "--harmony",
-      watch: [meta.main, "server.js", "config", "auth", "api"],
-      ignore_watch: ["node_modules"],
+      watch: [meta.main, "server.js", "config", "routes", "public"],
+      ignore_watch: [".git", "node_modules"],
       watch_options: {
         followSymlinks: false
       },
@@ -57,9 +57,8 @@ module.exports = {
       host: "0.0.0.0",
       ref: "origin/master",
       repo: meta.repository.url,
-      path: "~/www/super-workshop-js/dev",
-      "post-deploy":
-        "cd servers/server-express && npm install && pm2 startOrRestart ecosystem.js --env dev",
+      path: "~/www/eventbyte-api/dev",
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.js --env dev",
       env: {
         NODE_ENV: "dev"
       }
@@ -69,9 +68,9 @@ module.exports = {
       host: "0.0.0.0",
       ref: "origin/master",
       repo: meta.repository.url,
-      path: "~/www/super-workshop-js/staging",
+      path: "~/www/eventbyte-api/staging",
       "post-deploy":
-        "cd servers/server-express && npm install && pm2 startOrRestart ecosystem.js --env staging",
+        "npm install && pm2 startOrRestart ecosystem.js --env staging",
       env: {
         NODE_ENV: "dev"
       }
@@ -81,9 +80,9 @@ module.exports = {
       host: "0.0.0.0",
       ref: "origin/master",
       repo: meta.repository.url,
-      path: "~/www/super-workshop-js/production",
+      path: "~/www/eventbyte-api/production",
       "post-deploy":
-        "cd servers/server-express && npm install && pm2 startOrRestart ecosystem.js --env production",
+        "npm install && pm2 startOrRestart ecosystem.js --env production",
       env: {
         NODE_ENV: "production"
       }
