@@ -21,9 +21,10 @@ module.exports = {
   // ---------------------------------------------------------------------------
   // INSERT USERS
   insertUsers: data => {
-    User.create(data, err => {
-      err ? console.log(err) : data
+    const result = User.create(data, (err, data) => {
+      err ? err : data
     })
+    return result
   },
 
   // ---------------------------------------------------------------------------

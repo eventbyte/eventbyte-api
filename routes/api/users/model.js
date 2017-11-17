@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const AutoIncrement = require("mongoose-sequence")(mongoose)
+const UniqueValidator = require("mongoose-unique-validator")
 
 const ModelName = "User"
 const ModelSchema = mongoose.Schema(
@@ -186,6 +187,7 @@ const ModelSchema = mongoose.Schema(
 )
 
 ModelSchema.plugin(AutoIncrement, { id: "user_id", inc_field: "id" })
+ModelSchema.plugin(UniqueValidator)
 
 const Model = mongoose.model(ModelName, ModelSchema)
 

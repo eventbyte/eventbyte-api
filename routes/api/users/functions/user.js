@@ -21,11 +21,12 @@ module.exports = {
   // ---------------------------------------------------------------------------
   // SEED USERS
   seed: async (req, res, next) => {
-    helpers.insertUsers(DATA)
-
-    res.send({
-      message: "SEED",
-      users: DATA
+    const result = helpers.insertUsers(DATA)
+    result.then(data => {
+      res.send({
+        message: "SEED",
+        data: data
+      })
     })
   },
 
