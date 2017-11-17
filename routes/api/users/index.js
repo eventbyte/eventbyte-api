@@ -5,8 +5,11 @@ const user = require("./functions/user")
 const event = require("./functions/event")
 const topic = require("./functions/topic")
 
-// // ADMIN
-// router.post("/seed", user.seed)
+// -----------------------------------------------------------------------------
+
+// ADMIN
+router.delete("/drop", user.drop)
+router.post("/seed", user.seed)
 //
 // // USER
 // router.get("/", user.get)

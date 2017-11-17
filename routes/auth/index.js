@@ -12,10 +12,6 @@ const validate = require("./functions/validate")
 router.get("/", auth.get)
 
 // -----------------------------------------------------------------------------
-
-router.delete("/drop", auth.drop)
-
-// -----------------------------------------------------------------------------
 // SIGN UP : SAVE NEW USER
 
 router.post(
