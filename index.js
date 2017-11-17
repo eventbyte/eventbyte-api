@@ -17,7 +17,7 @@ const notifier = require("node-notifier")
  * Get port from environment and store in Express.
  */
 
-const HOST = normalizePort(process.env.HOST || "localhost")
+const HOST = process.env.HOST || "localhost"
 const PORT = normalizePort(process.env.PORT || "1337")
 app.set("host", HOST)
 app.set("port", PORT)
