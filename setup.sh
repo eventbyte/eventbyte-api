@@ -1,3 +1,6 @@
+# install mongodb
+sudo service mongod start
+
 cp .env.schema .env
 cp ecosystem.config.schema.js ecosystem.config.js
 

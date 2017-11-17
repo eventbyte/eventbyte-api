@@ -13,7 +13,7 @@ module.exports = [
     title: "Entrepreneurship",
     description: "For entrepreneurs"
   },
-
+  
   {
     title: "Business",
     description: "For business people"

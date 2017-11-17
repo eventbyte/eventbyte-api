@@ -7,8 +7,9 @@
  */
 
 const app = require("./app")
-const debug = require("debug")("express:server")
+const debug = require("debug")("api:server")
 const http = require("http")
+const notifier = require("node-notifier")
 
 // -----------------------------------------------------------------------------
 
@@ -37,7 +38,13 @@ const server = http.createServer(app)
 
 server.listen(PORT, HOST, err => {
   if (err) console.log(err)
-  else console.log(`SERVER IS LISTENING ${HOST}:${PORT}`)
+  else {
+    notifier.notify({
+      title: `Event Byte API`,
+      message: `Server is listening on ${HOST}:${PORT}`
+    })
+    console.log(`Server is listening on ${HOST}:${PORT}`)
+  }
 })
 server.on("error", onError)
 server.on("listening", onListening)

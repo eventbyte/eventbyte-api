@@ -1,8 +1,9 @@
 const express = require("express")
 const router = express.Router()
 
-const user = require("./user")
-const event = require("./event")
+const user = require("./functions/user")
+const event = require("./functions/event")
+const topic = require("./functions/topic")
 
 // USER
 

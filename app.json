@@ -1,0 +1,7 @@
+{
+  "name": "EventByte",
+  "description": "EventByte API",
+  "repository": "https://github.com/eventbyte/eventbyte-api",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

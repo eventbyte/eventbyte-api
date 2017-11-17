@@ -14,6 +14,30 @@ Setup your repo first:
 ./setup.sh
 ```
 
+## Connect to Database
+
+### Local
+
+```sh
+mongo
+```
+
+### MongoDB Atlas
+
+- Connection:
+  - Type: Direct Connection
+  - Name: YourPreferredName
+  - Address: `databasename-shard-00-00-sppjs.mongodb.net`
+  - Port: `27017`
+- Authentication:
+  - [x] Perform Authentication
+  - Database: admin
+  - User Name: yourusername
+  - Password: yourpassword
+  - Auth Mechanism: SCRAM-SHA-1
+- SSL:
+  - [x] Use SSL protocol
+
 ## Development
 
 ```sh
