@@ -13,6 +13,7 @@ const ModelSchema = mongoose.Schema(
     },
     password: {
       type: String,
+      required: true,
       select: false
     },
     hash: {

@@ -7,7 +7,13 @@ const { matchedData, sanitize } = require("express-validator/filter")
 const auth = require("./functions/auth")
 const validate = require("./functions/validate")
 
+// -----------------------------------------------------------------------------
+
 router.get("/", auth.get)
+
+// -----------------------------------------------------------------------------
+
+router.delete("/drop", auth.drop)
 
 // -----------------------------------------------------------------------------
 // SIGN UP : SAVE NEW USER
@@ -15,13 +21,12 @@ router.get("/", auth.get)
 router.post(
   "/signup",
   [
-    // CHECK EMAIL
+    body("name"),
     body("email")
       .isEmail()
       .withMessage("must be an email")
       .trim()
       .normalizeEmail(),
-    // CHECK PASSWORD
     body("password", "passwords must be at least 5 characters long").isLength({
       min: 5
     })
@@ -35,13 +40,11 @@ router.post(
 router.post(
   "/signin",
   [
-    // CHECK EMAIL
     body("email")
       .isEmail()
       .withMessage("must be an email")
       .trim()
       .normalizeEmail(),
-    // CHECK PASSWORD
     body("password")
   ],
   auth.signin

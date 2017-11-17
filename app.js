@@ -1,3 +1,5 @@
+process.env.NODE_ENV !== "production" && require("dotenv").config()
+
 const express = require("express")
 const cors = require("cors")
 const helmet = require("helmet")
@@ -5,6 +7,19 @@ const path = require("path")
 const logger = require("morgan")
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
+
+const mongoose = require("mongoose")
+const jwt = require("jsonwebtoken") // used to create, sign, and verify tokens
+
+// -----------------------------------------------------------------------------
+
+// connect to MongoDB
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI, {
+  useMongoClient: true
+})
+
+// -----------------------------------------------------------------------------
 
 const index = require("./routes")
 const auth = require("./routes/auth")
