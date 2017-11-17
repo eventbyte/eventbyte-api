@@ -85,6 +85,8 @@ const server = http.createServer(app)
  * Listen on provided port, on all network interfaces.
  */
 
+const MESSAGE_SERVER = `Server is listening on ${HOST}:${PORT}`
+
 if (process.env.NODE_ENV !== "production") {
   // SERVER ON DEVELOPMENT
   server.listen(PORT, HOST, err => {
@@ -92,9 +94,9 @@ if (process.env.NODE_ENV !== "production") {
     else {
       notifier.notify({
         title: `Event Byte API`,
-        message: `Server is listening on ${HOST}:${PORT}`
+        message: MESSAGE_SERVER
       })
-      console.log(`Server is listening on ${HOST}:${PORT}`)
+      console.log(MESSAGE_SERVER)
     }
   })
 } else {
@@ -102,7 +104,7 @@ if (process.env.NODE_ENV !== "production") {
   server.listen(PORT, err => {
     if (err) console.log(err)
     else {
-      console.log(`Server is listening on :${PORT}`)
+      console.log(MESSAGE_SERVER)
     }
   })
 }
