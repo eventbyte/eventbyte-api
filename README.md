@@ -8,6 +8,11 @@
 
 # EventByte API
 
+- Official: https://event-api.impactbyte.com
+- API: https://impactbyte-api.herokuapp.com
+
+## Setup
+
 Setup your repo first:
 
 ```sh
