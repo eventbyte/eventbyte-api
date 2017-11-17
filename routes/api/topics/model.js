@@ -5,6 +5,7 @@ const AutoIncrement = require("mongoose-sequence")(mongoose)
 const ModelName = "Topic"
 const ModelSchema = mongoose.Schema(
   {
+    // CORE
     title: {
       type: String,
       required: true
@@ -12,6 +13,26 @@ const ModelSchema = mongoose.Schema(
     description: {
       type: String,
       required: true
+    },
+    // EVENTS
+    events: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Event"
+      }
+    ],
+    // TIMESTAMP
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
+    updatedBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
+    deletedBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
     }
   },
   { timestamps: true }
